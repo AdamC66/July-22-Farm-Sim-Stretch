@@ -8,12 +8,13 @@ class Farmer:
             self.call_option(user_input)
     
     def print_main_menu(self):
-        print("Field ->")
-        print("Harvest ->")
-        print("Status ->")
-        print("Relax ->")
-        print("Exit")
-    
+        print("---------------------------")
+        print("Field -> adds a new field")
+        print("Harvest -> harvests crops and adds to total harvested")
+        print("Status -> displays some information about the farm")
+        print("Relax -> provides lovely descriptions of your fields")
+        print("Exit -> exits the program")
+        print("---------------------------")
     def call_option(self,user_input):
         if user_input.lower() == "field":
             self.new_farm()
@@ -34,11 +35,11 @@ class Farmer:
         print("How large is the field in hectares?")
         field_size = int(input())
         Farm.add_farm(field_size, field_type)
-        print(f'Added a {field_type.capitalize()} of {field_size} Hectares')
+        print(f'Added a {field_type.capitalize()} field of {field_size} Hectares')
     
     def harvest(self):
         total = Farm.harvest_crops()
-        print(f'The farm has harvested {total} so far')
+        print(f'The farm has harvested {total} food so far')
     
     def status(self):
         Farm.farm_status()
